@@ -17,16 +17,23 @@ const title =
 const description =
   'Professional Full Stack Developer specializing in Laravel, Next.js, TypeScript, PHP, MySQL, and VB.NET. I build scalable web applications, enterprise software, and modern digital solutions that solve real-world business challenges.'
 
-const url = process.env.NEXT_PUBLIC_SITE_URL
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  'https://aytech-portfolio.vercel.app'
 
 export const metadata: Metadata = {
-  title,
-  description,
+  metadataBase: new URL(SITE_URL),
+
+  title:
+    'Adeyemi Ayobami Samson | Full Stack Developer | Laravel, Next.js & Software Engineer',
+
+  description:
+    'Professional Full Stack Developer specializing in Laravel, Next.js, TypeScript, PHP, MySQL, and VB.NET. I build scalable web applications, enterprise software, and modern digital solutions that solve real-world business challenges.',
+
   category: 'technology',
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL!),
 
   alternates: {
-    canonical: url,
+    canonical: SITE_URL,
   },
 
   keywords: [
@@ -53,18 +60,26 @@ export const metadata: Metadata = {
   creator: 'Adeyemi Ayobami Samson',
 
   openGraph: {
-    title,
-    description,
-    url,
+    title:
+      'Adeyemi Ayobami Samson | Full Stack Developer | Laravel, Next.js & Software Engineer',
+
+    description:
+      'Professional Full Stack Developer specializing in Laravel, Next.js, TypeScript, PHP, MySQL, and VB.NET.',
+
+    url: SITE_URL,
     siteName: 'AyTECH Portfolio',
-    type: 'website',
     locale: 'en_US',
+    type: 'website',
   },
 
   twitter: {
-    title,
-    description,
     card: 'summary_large_image',
+    title:
+      'Adeyemi Ayobami Samson | Full Stack Developer | Laravel, Next.js & Software Engineer',
+
+    description:
+      'Professional Full Stack Developer specializing in Laravel, Next.js, TypeScript, PHP, MySQL, and VB.NET.',
+
     creator: '@AyTECH',
   },
 }
