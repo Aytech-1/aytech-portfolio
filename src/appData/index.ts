@@ -306,13 +306,13 @@ export const experiences = [
       'Completed a one-year Industrial Training program focused on Full Stack Web and Software Development, gaining hands-on experience with Laravel, PHP, Next.js, TypeScript, MySQL, and modern development workflows.',
   },
 
-  {
-    title: 'NYSC ICT Officer',
-    organization: 'The Gateway ICT Polytechnic, Saapade',
-    duration: '2025 - 2026',
-    description:
-      'Serving within the ICT Unit, supporting institutional technology operations, software systems, digital transformation initiatives, and IT-related services.',
-  },
+  // {
+  //   title: 'NYSC ICT Officer',
+  //   organization: 'The Gateway ICT Polytechnic, Saapade',
+  //   duration: '2025 - 2026',
+  //   description:
+  //     'Serving within the ICT Unit, supporting institutional technology operations, software systems, digital transformation initiatives, and IT-related services.',
+  // },
 ]
 
 export const educationData = [
