@@ -21,13 +21,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
     <article className="group bg-secondary border-border hover:border-accent/40 hover:shadow-accent/10 overflow-hidden rounded-3xl border transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
       {/* Project Image */}
       <div className="relative overflow-hidden">
-        <Image
+        {/* <Image
           src={cover}
           alt={title}
           width={800}
           height={500}
           className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
+        /> */}
 
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />

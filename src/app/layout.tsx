@@ -5,6 +5,7 @@ import Footer from '@/components/Footer/Footer'
 import Navbar from '@/components/Navbar/Navbar'
 import ThemeMenu from '@/components/Theme/ThemeMenu'
 import { Fira_Code } from 'next/font/google'
+import { Toaster } from 'react-hot-toast'
 
 const firaCode = Fira_Code({
   subsets: ['latin'],
@@ -100,6 +101,10 @@ export default function RootLayout({
 
         <ThemeMenu />
         <Footer />
+        <Toaster
+          position="top-right"
+          reverseOrder={false}
+        />
       </body>
     </html>
   )

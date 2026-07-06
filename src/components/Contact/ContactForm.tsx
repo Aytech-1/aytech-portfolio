@@ -1,99 +1,128 @@
 'use client'
 
-import { useActionState } from 'react'
-import contactFormAction from '@/actions/contact-form'
+import { useState } from 'react'
+import toast from 'react-hot-toast'
+import { LoaderCircle, Send } from 'lucide-react'
 
-const initialState = {
-  success: false,
-  message: '',
-}
+import Button from '../UI/Button'
+import Input from '../UI/Input'
+import Textarea from '../UI/Textarea'
 
 export default function ContactForm() {
-  const [state, formAction, pending] = useActionState(
-    contactFormAction,
-    initialState,
-  )
+  const [loading, setLoading] = useState(false)
+
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
+    e.preventDefault()
+
+    setLoading(true)
+
+    const form = e.currentTarget
+    const formData = new FormData(form)
+
+    try {
+      const response = await fetch(
+        'https://formsubmit.co/ajax/adeyemiayobami273@gmail.com',
+        {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+          },
+          body: formData,
+        }
+      )
+
+      const result = await response.json()
+
+      if (result.success) {
+        toast.success('Message sent successfully')
+        form.reset()
+      } else {
+        toast.error('Failed to send message')
+      }
+    }
+    catch (error) {
+      toast.error('Something went wrong')
+    }
+
+    setLoading(false)
+  }
 
   return (
     <form
-      action={formAction}
+      onSubmit={handleSubmit}
       className="space-y-5"
     >
-      <div>
-        <label className="mb-2 block text-sm font-medium">
-          Full Name
-        </label>
+      <input
+        type="hidden"
+        name="_captcha"
+        value="false"
+      />
 
-        <input
-          type="text"
-          name="name"
-          required
-          className="bg-secondary border-border focus:border-accent w-full rounded-xl border px-4 py-3 outline-none"
-          placeholder="Enter your full name"
-        />
-      </div>
+      <input
+        type="hidden"
+        name="_subject"
+        value="New Portfolio Contact Message"
+      />
 
-      <div>
-        <label className="mb-2 block text-sm font-medium">
-          Email Address
-        </label>
+      <input
+        type="hidden"
+        name="_template"
+        value="table"
+      />
 
-        <input
-          type="email"
-          name="email"
-          required
-          className="bg-secondary border-border focus:border-accent w-full rounded-xl border px-4 py-3 outline-none"
-          placeholder="Enter your email address"
-        />
-      </div>
+      {/* Honeypot */}
+      <input
+        type="text"
+        name="_honey"
+        className="hidden"
+      />
 
-      <div>
-        <label className="mb-2 block text-sm font-medium">
-          Subject
-        </label>
+      <Input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
+      />
 
-        <input
-          type="text"
-          name="subject"
-          required
-          className="bg-secondary border-border focus:border-accent w-full rounded-xl border px-4 py-3 outline-none"
-          placeholder="Project Discussion"
-        />
-      </div>
+      <Input
+        type="email"
+        name="email"
+        placeholder="Your Email Address"
+        required
+      />
 
-      <div>
-        <label className="mb-2 block text-sm font-medium">
-          Message
-        </label>
+      <Input
+        type="text"
+        name="subject"
+        placeholder="Subject"
+        required
+      />
 
-        <textarea
-          name="message"
-          required
-          rows={6}
-          className="bg-secondary border-border focus:border-accent w-full rounded-xl border px-4 py-3 outline-none"
-          placeholder="Tell me about your project..."
-        />
-      </div>
+      <Textarea
+        name="message"
+        placeholder="Tell me about your project..."
+        rows={6}
+        required
+      />
 
-      <button
-        type="submit"
-        disabled={pending}
-        className="bg-accent text-primary hover:bg-accent/90 w-full rounded-xl px-6 py-3 font-semibold transition"
-      >
-        {pending ? 'Sending...' : 'Send Message'}
-      </button>
-
-      {state?.message && (
-        <div
-          className={`rounded-xl p-4 text-sm ${
-            state.success
-              ? 'border border-green-500/20 bg-green-500/10 text-green-500'
-              : 'border border-red-500/20 bg-red-500/10 text-red-500'
-          }`}
-        >
-          {state.message}
-        </div>
-      )}
+      <Button disabled={loading}>
+        {loading ? (
+          <>
+            <LoaderCircle
+              size={18}
+              className="animate-spin"
+            />
+            Sending...
+          </>
+        ) : (
+          <>
+            <Send size={18} />
+            Send Message
+          </>
+        )}
+      </Button>
     </form>
   )
 }

@@ -9,9 +9,6 @@ import AchievementSection from '@/components/Achievement/AchievementSection'
 import SkillList from '@/components/Skills/Skills'
 import Skills from '@/components/Skills/skillSection'
 
-
-
-
 export default async function Home() {
   return (
     <main>

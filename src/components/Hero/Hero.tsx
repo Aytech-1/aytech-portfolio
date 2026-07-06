@@ -41,21 +41,13 @@ const Hero = () => {
               </a>
 
               <a
-                href="/Adeyemi_Ayobami_CV.pdf"
+                href="/Adeyemi_Ayobami_Samson_CV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="border-border text-neutral rounded-xl border px-7 py-3 font-medium transition-all duration-300 hover:bg-secondary"
               >
                 Download CV
               </a>
-
-              <a
-                href="#contact"
-                className="text-accent rounded-xl px-4 py-3 font-medium transition-all duration-300 hover:translate-x-1"
-              >
-                Let's Talk →
-              </a>
-
             </div>
           </div>
 

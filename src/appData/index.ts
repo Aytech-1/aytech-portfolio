@@ -18,13 +18,13 @@ import { FaCode, FaDatabase, FaServer, FaLaptopCode, FaTools, FaSitemap } from '
 export const projects = [
   {
     priority: 1,
-    title: 'Online Bookshop System',
+    title: 'Smart Cooperative Society Management System',
     shortDescription:
-      'A full-featured e-commerce platform that enables students and institutions to browse, purchase, and manage academic books online with secure ordering, receipt generation, and administrative management.',
-    cover: '/projects/bookshop.jpg',
+      'A comprehensive web application for managing cooperative societies, including member management, financial transactions, and reporting features.',
+    cover: '/projects/cooperative.jpg',
     type: 'Featured',
     livePreview: '',
-    githubLink: 'https://github.com/Aytech-1/Web-Loan-Application.git',
+    githubLink: 'https://github.com/Aytech-1/gaposa-cooperative-management-system.git',
     technologies: [
       'Next.js',
       'TypeScript',
@@ -54,20 +54,19 @@ export const projects = [
 
   {
     priority: 3,
-    title: 'AfooTECH Microfinance Bank System',
+    title: 'Aytech Portfolio Website',
     shortDescription:
-      'A digital banking platform designed for microfinance operations, supporting account management, transactions, customer records, and financial services.',
-    cover: '/projects/bank.jpg',
-    type: 'Enterprise',
+      'A modern, responsive portfolio website showcasing my projects, skills, and experience.',
+    cover: '/projects/portfolio.jpg',
+    type: 'Web Application',
     livePreview: '',
     githubLink:
-      'https://github.com/Aytech-1/AfooTECH-Microfinance-Bank.git',
+      'https://github.com/Aytech-1/aytech-portfolio.git',
     technologies: [
-      'PHP',
-      'MySQL',
-      'Bootstrap',
+      'Next.js',
+      'TypeScript',
       'JavaScript',
-      'jQuery',
+      'Tailwind CSS',
     ],
   },
 

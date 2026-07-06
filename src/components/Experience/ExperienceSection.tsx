@@ -19,7 +19,7 @@ const ExperienceSection = () => {
                 </div>
 
                 <div className="bg-secondary border-border rounded-3xl border p-6 text-center">
-                    <h3 className="text-accent text-3xl font-bold">15+</h3>
+                    <h3 className="text-accent text-3xl font-bold">5+</h3>
                     <p className="text-primary-content mt-2 text-sm">
                         Projects Completed
                     </p>

@@ -20,7 +20,7 @@ const ContactSection = () => {
       />
 
       <div className="bg-secondary border-border mt-12 grid grid-cols-1 gap-10 rounded-[32px] border p-8 md:grid-cols-[0.9fr_1.1fr] md:p-12 lg:p-16">
-        
+
         {/* LEFT */}
         <div className="flex flex-col justify-between">
 
@@ -81,7 +81,7 @@ const ContactSection = () => {
                   Email Address
                 </p>
 
-                <p className="text-neutral/70 text-sm">
+                <p className="text-neutral/70 text-xs font-medium">
                   adeyemiayobami273@gmail.com
                 </p>
               </div>
@@ -171,11 +171,11 @@ const ContactSection = () => {
         {/* RIGHT */}
         <div className="bg-primary border-border rounded-3xl border p-6 md:p-8">
           <h3 className="text-neutral mb-2 text-2xl font-bold">
-            Send a Message
+            Start a Conversation
           </h3>
 
           <p className="text-neutral/70 mb-8">
-            Fill out the form below and I'll get back to you as soon as possible.
+            Have a project, business idea, or collaboration in mind? Send a message and I'll get back to you within 24 hours.
           </p>
 
           <ContactForm />
